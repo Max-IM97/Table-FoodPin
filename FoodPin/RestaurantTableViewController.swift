@@ -68,12 +68,47 @@ class RestaurantTableViewController: UITableViewController {
         cell.typeLabel.text = restaurantTypes[indexPath.row]
         cell.locationLabel.text = restaurantLocations[indexPath.row]
 
-//        cell.thumbnailImageView.layer.cornerRadius = cell.thumbnailImageView.frame.size.width / 2
-//        cell.thumbnailImageView.clipsToBounds = true
+        
+        // Makes the image circular
+        
+        cell.thumbnailImageView.layer.cornerRadius = cell.thumbnailImageView.frame.size.width / 2
+        cell.thumbnailImageView.clipsToBounds = true
         
         return cell
     }
 
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        // Create an option menu as an action sheet
+        let optionMenu = UIAlertController(title: nil, message: "What do you want to do ?", preferredStyle: .ActionSheet)
+        
+        // Add actions to the menu
+        //      CANCEL
+        optionMenu.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+//        optionMenu.addAction(cancelAction)
+        //      CALL
+        let callActionHandler = { (action: UIAlertAction!) -> Void in
+            let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, the call feature is not available yet. please try again later.", preferredStyle: .Alert)
+            alertMessage.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(alertMessage, animated: true, completion: nil)
+        }
+        let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)", style: UIAlertActionStyle.Default, handler: callActionHandler)
+        optionMenu.addAction(callAction)
+        //      BEEN HERE
+        let isVisitedAction = UIAlertAction(title: "I've been here", style: .Default, handler: { (action:UIAlertAction!) -> Void in
+            let cell = tableView.cellForRowAtIndexPath(indexPath)
+            cell?.accessoryType = .Checkmark
+        })
+        optionMenu.addAction(isVisitedAction)
+        
+        // Display the menu
+        self.presentViewController(optionMenu, animated: true, completion: nil)
+        
+        // deselect highlighted cell
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+    }
 
     /*
     // Override to support conditional editing of the table view.

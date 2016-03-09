@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -28,45 +27,57 @@
         <scene sceneID="6Uo-0m-tGW">
             <objects>
                 <tableViewController id="7r8-Ub-ahu" customClass="RestaurantTableViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="334" sectionHeaderHeight="28" sectionFooterHeight="28" id="h1x-Z3-RdZ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="h1x-Z3-RdZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="334" id="KvJ-4t-pvj" customClass="CustomTableViewCell" customModule="FoodPin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="334"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="KvJ-4t-pvj" customClass="CustomTableViewCell" customModule="FoodPin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="22" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KvJ-4t-pvj" id="Vk2-KL-U0f">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ptw-7m-Fxr">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="372.5"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ptw-7m-Fxr">
+                                            <rect key="frame" x="15" y="10" width="60" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="6LZ-nr-FnO"/>
+                                                <constraint firstAttribute="height" constant="60" id="nrM-xK-bGo"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpu-T4-ryU">
-                                            <rect key="frame" x="44" y="215" width="286" height="35"/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="21"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpu-T4-ryU">
+                                            <rect key="frame" x="86" y="54" width="205" height="15.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="15.5" id="VL4-1f-hQw"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6e-sd-lcX">
-                                            <rect key="frame" x="44" y="178" width="286" height="29"/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6e-sd-lcX">
+                                            <rect key="frame" x="86" y="35" width="205" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="5sX-ug-wpP"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nj5-eh-2xI">
-                                            <rect key="frame" x="44" y="134" width="286" height="30"/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nj5-eh-2xI">
+                                            <rect key="frame" x="86" y="8" width="205" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="vvh-2K-5zJ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Ptw-7m-Fxr" firstAttribute="top" secondItem="Vk2-KL-U0f" secondAttribute="topMargin" constant="-8" id="HRa-AP-mtG"/>
-                                        <constraint firstItem="Ptw-7m-Fxr" firstAttribute="leading" secondItem="Vk2-KL-U0f" secondAttribute="leadingMargin" constant="-8" id="MTN-Gv-dMa"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Ptw-7m-Fxr" secondAttribute="bottom" constant="-47" id="svb-CS-qi5"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Ptw-7m-Fxr" secondAttribute="trailing" constant="-8" id="u1u-j2-aDF"/>
+                                        <constraint firstItem="Tpu-T4-ryU" firstAttribute="top" secondItem="y6e-sd-lcX" secondAttribute="bottom" constant="1" id="HSI-n0-Nfd"/>
+                                        <constraint firstItem="y6e-sd-lcX" firstAttribute="top" secondItem="nj5-eh-2xI" secondAttribute="bottom" constant="5" id="PGA-o1-eYA"/>
+                                        <constraint firstItem="y6e-sd-lcX" firstAttribute="leading" secondItem="Ptw-7m-Fxr" secondAttribute="trailing" constant="11" id="yq3-zx-zNq"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
