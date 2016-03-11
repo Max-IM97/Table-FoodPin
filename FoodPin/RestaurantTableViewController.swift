@@ -27,6 +27,12 @@ class RestaurantTableViewController: UITableViewController {
         "American / Seafood", "American", "American", "Breakfast & Brunch",
         "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish",
         "Spanish", "British", "Thai"]
+    
+    var restaurantIsVisited = [Bool](count: 21, repeatedValue: false)
+    
+//    var restaurantIsVisited = [false, false, false, false, false,
+//        false, false, false, false, false, false, false, false, false,
+//        false, false, false, false, false, false, false]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +79,14 @@ class RestaurantTableViewController: UITableViewController {
         
         cell.thumbnailImageView.layer.cornerRadius = cell.thumbnailImageView.frame.size.width / 2
         cell.thumbnailImageView.clipsToBounds = true
+    
+//        if restaurantIsVisited[indexPath.row] {
+//                cell?.accessoryType = .Checkmark
+//            } else {
+//                cell?.accessoryType = .None
+//        }
+        //ternary conditional operator
+        cell.accessoryType = restaurantIsVisited[indexPath.row] ? .Checkmark : .None
         
         return cell
     }
@@ -100,6 +114,7 @@ class RestaurantTableViewController: UITableViewController {
         let isVisitedAction = UIAlertAction(title: "I've been here", style: .Default, handler: { (action:UIAlertAction!) -> Void in
             let cell = tableView.cellForRowAtIndexPath(indexPath)
             cell?.accessoryType = .Checkmark
+            self.restaurantIsVisited[indexPath.row] = true
         })
         optionMenu.addAction(isVisitedAction)
         
